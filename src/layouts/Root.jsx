@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const Root = () => {
     
@@ -20,10 +21,11 @@ const Root = () => {
         </ul>
       </nav>
       
-      <div className="container pt-10">
+      <div>
 
       <Outlet  />
       </div>
+     <Footer />
     </div>
   );
 };

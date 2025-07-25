@@ -1,26 +1,30 @@
+import { createBrowserRouter, useLoaderData } from "react-router-dom";
 
+import React, { Component } from "react";
+import Root from "./layouts/Root";
+import Homme from "./pages/Homme";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import ErrorPage from "./pages/ErrorPage";
+import Erreur from "./pages/Erreur";
+import AuthLayout from "./layouts/AuthLayout";
+import RootLayout from "./layouts/RootLayout";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
 
-import { createBrowserRouter, useLoaderData } from 'react-router-dom';
-
-import React, { Component } from 'react';
-import Root from './layouts/Root';
-import Homme from './pages/Homme';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import ErrorPage from './pages/ErrorPage';
-import Erreur from './pages/Erreur';
+import Footer from "./components/Footer";
 
 export const router = createBrowserRouter([
-    {
-        path: '/',
-        // errorElement: <ErrorPage /> ,        
-        Component: Root,
-        children: [
-            {index: true, Component: Homme},
-            {path: 'about', Component: About},
-            {path: 'contact', Component: Contact},
-            {path: '*', Component: Erreur},
-        ]
-    }
-])
+  {
+    path: "/",
+    // errorElement: <ErrorPage /> ,
+    Component: Root,
+    children: [
+      { index: true, Component: Homme },
+      { path: "about", Component: About },
+      { path: "contact", Component: Contact },
+      { path: "*", Component: Homme },
 
+    ],
+  },
+]);
